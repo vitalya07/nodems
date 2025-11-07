@@ -1,0 +1,49 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "DeutschGothic", Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+ul {
+    list-style: none;
+}
+input {
+    border: none;
+    display: block;
+    &:focus {
+        outline: 1px solid #00000000;
+    }
+}
+label {
+    display: block;
+}
+textarea {
+    display: block;
+    border: none;
+    resize: none;
+    &:focus {
+        outline: 1px solid #00000000;
+    }
+}
+button {
+    cursor: pointer;
+    border: none;
+    &:focus {
+        outline: 1px solid #00000000;
+    }
+}
+img {
+    object-fit: cover;
+}
+a {
+    text-decoration: none;
+}

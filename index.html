@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Описание сайта">
+    <title>Urban contenxt</title>
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="body__container">        
+        <header class="header" id="header">
+            <div class="container">
+                <div class="header__wrapper">
+                    <div class="header__left">
+                        <a href="index.html" class="header__logo custom-logo" id="header-logo">Логотип сайта</a>
+                        <nav class="header__nav" id="header-nav">
+                            <ul class="header__nav-list">
+                                <li><a href="#">О нас</a></li>
+                                <li><a href="#">Команда</a></li>
+                                <li><a href="#">Этапы</a></li>
+                                <li><a href="#">Подход</a></li>
+                                <li><a href="#">Проекты</a></li>
+                                <li><a href="#">Статьи</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="header__right">
+                        <div class="header__change-lingue">
+                            <div class="header__change-item header__change-item--DU" id="DU">DU</div>
+                            <div class="header__change-item header__change-item--RU" id="RU">РУ</div>
+                        </div>
+                        <div class="header__change-colors">
+                            <div class="header__change-color header__change-colors--dark" id="dark">
+                                <img src="assets/icons/moon.svg" alt="Луна" width="30" height="30" loading="lazy">
+                                <span>Dark</span>
+                            </div>
+                           <div class="header__change-color header__change-colors--light" id="light">
+                                <img src="assets/icons/sun.svg" alt="Луна" width="30" height="30" loading="lazy">
+                                <span>Light</span>
+                            </div>
+                        </div>
+                        <button class="header__btn btn open__modal">Написать нам</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </header>
+        <main class="content">
+            <section class="main" id="main">
+                <div class="main__img">
+                    <picture>
+                        <source media="(max-width:450px)" srcset="assets/img/mobile/main-bg-mobile.webp">
+                        <source media="(min-width:451px)" srcset="assets/img/desktop/main-bg.webp">
+                        <img src="assets/img/desktop/main-bg.webp" alt="Главная картинка" width="1920" height="1280">
+                    </picture>                   
+                </div>
+                <h1 class="main__title">Центр поддержки соотечественников “НОДЕМС”</h1>
+                <h2 class="main__descr">С вами на пути к новой жизни</h2>
+            </section>
+            <section class="about" id="about">
+                <div class="container">
+                    <div class="about__wrapper">
+                        <div class="about__left">
+                            <h2 class="about__title">Переезд — это не просто смена места жительства. Это начало новой жизни.</h2>
+                            <p class="about__descr">Центр поддержки соотечественников “НОДЕМС” создан для того, чтобы сделать ваш переезд в Калининград легким, безопасным и комфортным.</p>
+                        </div>
+                        <div class="about__right">
+                            <div class="about__img">
+                                <picture>
+                                    <source media="(max-width:450px)" srcset="assets/img/mobile/about-mobile.webp">
+                                    <source media="(min-width:451px)" srcset="assets/img/desktop/about.webp">
+                                    <img src="assets/img/desktop/about.webp" alt="О нас" width="760" height="1015">
+                                </picture>  
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about__wrapper">
+                        <div class="about__right">
+                            <div class="about__img">
+                                <picture>
+                                    <source media="(max-width:450px)" srcset="assets/img/mobile/about-mobile-2.webp">
+                                    <source media="(min-width:451px)" srcset="assets/img/desktop/about-2.webp">
+                                    <img src="assets/img/desktop/about-2.webp" alt="О нас" width="760" height="1015">
+                                </picture>  
+                            </div>
+                        </div>
+                        <div class="about__left">
+                            <h2 class="about__title">Почему Калининградская область?</h2>
+                            <p class="about__descr">Сегодня все больше европейцев выбирают Калининградскую область, что не случайно. Этот регион — один самых уютных в России. </p>
+                            <p class="about__descr">В нашей области мирный уклад жизни, развитая инфраструктура и мягкий морской климат. Это делает ее прекрасным местом для жизни, воспитания детей, работы и развития своего дела</p>
+                            <p class="about__descr">Многие гости отмечают особую атмосферу — спокойную, дружелюбную и вдохновляющую. В Калининграде легко почувствовать себя “дома” — особенно с нашей поддержкой.</p>
+                            <button class="about__btn open__modal">Закаазать</button>
+                        </div>                        
+                    </div>
+                </div>
+            </section>
+            <section class="care" id="care">
+                <div class="container">
+                    <h2 class="care__title">Заботимся о каждом шаге в новую жизнь <span>Поддерживая вас при переезде в Калининград, мы:</span></h2>
+                    <div class="care__grid">
+                        <div class="care__item">
+                            <div class="care__item-el"></div>
+                            <h3 class="care__item-title">встречаем вас в аэропорту или на вокзале</h3>
+                        </div>
+                        <div class="care__item">
+                            <div class="care__item-el"></div>
+                            <h3 class="care__item-title">помогаем оформить SIM-карты и открыть банковский счет</h3>
+                        </div>
+                        <div class="care__item">
+                            <div class="care__item-el"></div>
+                            <h3 class="care__item-title">готовим документы для ВНЖ, РВП или гражданства</h3>
+                        </div>
+                        <div class="care__item">
+                            <div class="care__item-el"></div>
+                            <h3 class="care__item-title">подбираем жилье и сопровождаем его покупку или аренду</h3>
+                        </div>
+                        <div class="care__item">
+                            <div class="care__item-el"></div>
+                            <h3 class="care__item-title">упрощаем покупку участка и строительство своего дома</h3>
+                        </div>
+                        <div class="care__item">
+                            <div class="care__item-el"></div>
+                            <h3 class="care__item-title">организуем ремонт</h3>
+                        </div>
+                        <div class="care__item">
+                            <div class="care__item-el"></div>
+                            <h3 class="care__item-title">помогаем в трудоустройстве или адаптации вашего бизнеса</h3>
+                        </div>
+                        <div class="care__item">
+                            <div class="care__item-el"></div>
+                            <h3 class="care__item-title">оказываем психологическую и медицинскую поддержку</h3>
+                        </div>
+                        <div class="care__item">
+                            <div class="care__item-el"></div>
+                            <h3 class="care__item-title">подбираем школу и детский сад для ваших детей</h3>
+                        </div>
+                        <div class="care__item">
+                            <div class="care__item-el"></div>
+                            <h3 class="care__item-title">проводим обзорные, гастрономические и даже профориентационные экскурсии</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="team" id="team">
+                <div class="container">
+                    <h2 class="team__title">Команда, которой можно доверять </h2>
+                    <p class="team__pr">Наш центр объединяет профессионалов, искренне заинтересованных в вашем спокойствии и уверенности.</p>
+                    <p class="team__pr">Мы помогаем на каждом этапе адаптации, от первых шагов по прибытии в Калининград до полного обустройства.</p>
+                    <p class="team__pr">Ведь тогда вы сможете сосредоточиться на самом важном — на жизни и планах вашей семьи.</p>
+                </div>
+            </section>
+        </main>
+        <div class="footer">
+            <div class="container">
+                <div class="footer__wrapper">
+                    <a href="#" class="footer__logo custom-logo">Логотип сайта</a>
+                    <a href="#" class="footer__policy">политика конфиденциальности</a>
+                    <div class="footer__copy">©Все права защищены "НОДЕМС"</div>
+                </div>                
+            </div>
+        </div>   
+        <div class="modal modal__hidden">
+            <div class="modal__dialog">
+                <div class="modal__content">
+                    <div class="modal__head">
+                        <div class="modal__head-box">
+                            <h2 class="modal__head-title">Связаться с нами </h2> 
+                            <h3 class="modal__head-subtitle">Заполните форму и мы свяжемся с вами</h3>
+                        </div>                       
+                        <div class="modal__close"></div>
+                    </div>
+                    <div class="modal__form-container">
+                        <form  class="modal__form">
+                            <label for="modal-name" class="modal__label">
+                                <input type="text" autocomplete="name" id="modal-name" name="name" maxlength="50" minlength="2" placeholder="Ваше имя" class="modal__input" required>
+                            </label>
+                            <label for="modal-tel" class="modal__label">
+                                <input type="tel" autocomplete="tel" id="modal-tel" name="tel" maxlength="15" minlength="9" placeholder="Ваш телефон" class="modal__input" required>
+                            </label>
+                            <label for="modal-msg" class="modal__label">
+                                <textarea name="msg" id="modal-msg" class="modal__textarea" placeholder="Ваше сообщение"></textarea>
+                            </label>
+                            <div class="modal__warning">
+                                <input type="checkbox" class="modal__check" id="check" required>
+                                <p class="modal__information">Нажимая на кнопку, вы соглашаетесь с нашей <a href="#">политикой конфиденциальности</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>     
+    </div>
+    
+    <script src="assets/JS/swiper-bundle.min.js"></script>
+    <script src="assets/JS/script.js"></script>
+</body>
+</html>   

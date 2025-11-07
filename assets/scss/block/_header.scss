@@ -1,0 +1,105 @@
+.header {
+    position: fixed;
+    width: 100%;
+    padding: 30px 0;
+    background-color: #ffffff50;
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__left {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 20px;
+    }
+    &__right {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        gap: 20px;
+    }
+    &__nav {
+        &-list {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 20px;
+            & > li {
+                position: relative;                
+                &::before {
+                    content: "";
+                    position: absolute;
+                    bottom: -3px;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    border-radius: 10px;
+                    background-color: $mainColor;
+                    transition: all .4s ease;
+                }
+                & > a {
+                    font-size: 30px;
+                    line-height: 120%;
+                    color: $textBlackColor;
+                    transition: all .4s ease;
+                }
+                &:hover {
+                    &::before {
+                        width: 100%;
+                    }
+                    & > a {
+                        color: $mainColor;
+                    }
+                }
+            }
+        }
+    }
+    &__change {
+        &-item {
+            cursor: pointer;
+            font-size: 30px;
+            &--DU {
+                display: none;
+            }
+        }
+        &-color {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 10px;
+            & > span {
+                font-size: 30px;
+            }
+        }
+        &-colors {
+            cursor: pointer;
+            &--light {
+                display: none;
+            }
+        }
+       
+    }
+    &__btn {
+        width: 100%;
+        max-width: 200px;
+        height: 60px;
+        background-color: $mainColor;
+        color: $textWhiteColor;
+        font-size: 20px;
+        border-radius: 15px;
+        padding: 10px 15px;
+        transition: all .4s ease;
+        &:hover {
+            background-color: $mainColorHover;
+        }
+    }
+}
+.custom-logo {
+    width: 240px;
+    // height: 80px;
+    text-decoration: none;
+    color: $textBlackColor;
+    font-size: 30px;
+}
