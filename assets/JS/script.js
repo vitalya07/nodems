@@ -28,4 +28,12 @@ document.addEventListener('DOMContentLoaded', ()=> {
             hideModal();
         }
     })
+    //Модальное окно конец
+    //Гамбуоргер
+    const hamburger = document.querySelector('.hamburger');
+    const header = document.querySelector('.header');
+
+    hamburger.addEventListener('click', ()=> {
+        header.classList.toggle('menu__active');
+    })
 })

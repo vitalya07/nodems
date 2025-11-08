@@ -1,0 +1,49 @@
+.mobile__menu {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: $textGrayColor;
+    z-index: 30;
+    padding: 60px 20px;
+    transition: all .4s ease;
+    &-list {
+        margin-bottom: 60px;
+        & > li {
+            margin-bottom: 30px;
+            & > a {
+                font-family: 'DeutschGothic', Arial, Helvetica, sans-serif;
+                font-weight: 400;
+                font-size: 30px;
+                line-height: 120%;
+                color: $textBlackColor;
+            }
+        }
+    }
+    &-btn {
+        margin-bottom: 30px;
+    }
+}
+.menu__active {
+    .mobile__menu {
+        right: 0;
+    }
+    .hamburger {
+        & > span {
+            &:first-child {
+                top: 50%;
+                transform: translateY(-50%) rotate(45deg);
+            }
+            &:nth-child(2) {
+                top: 50%;
+                transform: translateY(-50%);
+                opacity: 0;
+            }
+            &:last-child {
+                top: 50%;
+                transform: translateY(-50%) rotate(-45deg);
+            }
+        }
+    }
+}

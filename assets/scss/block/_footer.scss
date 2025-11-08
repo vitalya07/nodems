@@ -1,6 +1,7 @@
 .footer {
-    padding: 100px;
+    padding: 100px 0;
     width: 100%;
+    background-color: $mainColor;
     &__wrapper {
         display: flex;
         align-items: center;
@@ -9,17 +10,17 @@
     &__policy {
         font-family: 'DeutschGothic', Arial, Helvetica, sans-serif;
         font-weight: 400;
-        font-size: 30px;
+        font-size: 20px;
         line-height: 120%;
         text-transform: uppercase;
-        color: $textBlackColor;
+        color: $textWhiteColor;
     }
     &__copy {
         font-family: 'DeutschGothic', Arial, Helvetica, sans-serif;
         font-weight: 400;
-        font-size: 30px;
+        font-size: 20px;
         line-height: 120%;
         text-transform: uppercase;
-        color: $textBlackColor;
+        color: $textWhiteColor;
     }
 }
