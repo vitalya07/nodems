@@ -35,5 +35,71 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
     hamburger.addEventListener('click', ()=> {
         header.classList.toggle('menu__active');
-    })
+    });
+    //гамбургер конец
+    //Смена темы начало
+    // const changeThemeBtn = document.querySelector('.header__change-color');
+    // const btnDark = document.querySelector('.header__change-colors--dark');
+    // const btnLight = document.querySelector('.header__change-colors--light');
+
+    // function enabledDark() {
+    //     document.body.classList.remove('light__style');
+    //     document.body.classList.add('dark__style');        
+    //     btnLight.style.display = 'none';
+    //     btnDark.style.display = 'flex';
+    //     let text = changeThemeBtn.querySelector('span');
+    //     text.textContent = `Light`;
+    //     let img = changeThemeBtn.querySelector('img');
+    //     img.src = '../assets/icons/sun.svg'; // правильное присваивание
+    // }
+
+    // function disableDark() {
+    //     document.body.classList.remove('dark__style');
+    //     document.body.classList.add('light__style');      
+    //     btnDark.style.display = 'none';
+    //     btnLight.style.display = 'flex';
+    //     let img = changeThemeBtn.querySelector('img');
+    //     img.src = '../assets/icons/moon.svg'; // если нужно вернуть изображение
+    // }
+
+    // changeThemeBtn.addEventListener('click', () => {
+    //     if (document.body.classList.contains('light__style')) {
+    //         enabledDark();
+    //     } else {
+    //         disableDark();
+    //     }
+    // });
+
+    const changeThemeBtn = document.querySelector('.header__change-color');
+    const btnDark = document.querySelector('.header__change-colors--dark');
+    const btnLight = document.querySelector('.header__change-colors--light');
+
+    function enabledDark() {
+        document.body.classList.remove('light__style');
+        document.body.classList.add('dark__style');        
+        btnLight.style.display = 'none';
+        btnDark.style.display = 'flex';
+        let text = changeThemeBtn.querySelector('span');
+        text.textContent = `Light`;
+        let img = changeThemeBtn.querySelector('img');
+        img.src = '../assets/icons/sun.svg';
+    }
+
+    function disableDark() {
+        document.body.classList.remove('dark__style');
+        document.body.classList.add('light__style');      
+        let text = changeThemeBtn.querySelector('span');
+        text.textContent = `Dark`;
+        btnLight.style.display = 'flex';
+        let img = changeThemeBtn.querySelector('img');
+        img.src = '../assets/icons/moon.svg';
+    }
+
+    changeThemeBtn.addEventListener('click', () => {
+        if (document.body.classList.contains('light__style')) {
+            enabledDark();
+        } else {
+            disableDark();
+        }
+    });
 })

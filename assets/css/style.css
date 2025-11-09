@@ -76,6 +76,22 @@ a {
   position: relative;
 }
 
+.dark__style {
+  background-color: #1d1d1d;
+  color: #f1fcfd;
+}
+.dark__style .header__nav-list > li > a {
+  color: #f1fcfd;
+}
+
+.light__style {
+  background-color: #f1fcfd;
+  color: #1d1d1d;
+}
+.light__style .header__nav-list > li > a {
+  color: #1d1d1d;
+}
+
 .header {
   position: fixed;
   width: 100%;
@@ -147,7 +163,6 @@ a {
 .header__nav-list > li > a {
   font-size: 30px;
   line-height: 120%;
-  color: #1d1d1d;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
@@ -388,7 +403,6 @@ a {
   font-size: 50px;
   font-weight: 700;
   line-height: 120%;
-  color: #1d1d1d;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;

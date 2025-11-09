@@ -7,3 +7,25 @@
     overflow: hidden;
     position: relative;
 }
+.dark__style {
+    background-color: $textBlackColor;
+    color: $textWhiteColor;
+    .header__nav-list {
+        & > li {
+            & > a {
+                color: $textWhiteColor;
+            }
+        }
+    }
+}
+.light__style {
+    background-color:  $textWhiteColor;
+    color:$textBlackColor;
+    .header__nav-list {
+        & > li {
+            & > a {
+                color:$textBlackColor;
+            }
+        }
+    }
+}
