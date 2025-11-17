@@ -7,3 +7,21 @@
     font-style: 'regular';
     font-weight: 400;
 }
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('../fonts/montserat');
+    src: url('../fonts/montserat/Montserrat-Bold.eot') format('embedded-opentype'),
+         url('../fonts/montserat/Montserrat-Bold.woff') format('woff'),
+         url('../fonts/montserat/Montserrat-Bold.ttf') format('truetype');
+    font-style: 'regular';
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'cuprum';
+    src: url('../fonts/cuprum');
+    src: url('../fonts/cuprum/Cuprum-Regular.eot') format('embedded-opentype'),
+         url('../fonts/cuprum/Cuprum-Italic.woff') format('woff'),
+         url('../fonts/cuprum/Cuprum-Regular.ttf') format('truetype');
+    font-style: 'regular';
+    font-weight: 400;
+}

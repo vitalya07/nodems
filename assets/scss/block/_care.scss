@@ -1,22 +1,21 @@
 .care {
     padding: 100px 0;
     &__title {
-        font-family: "DeutschGothic", Arial, Helvetica, sans-serif;
+        font-family: "Montserrat-Bold", Arial, Helvetica, sans-serif;
         font-size: 50px;
         font-weight: 700;
         line-height: 120%;
-        // color: $textBlackColor;
         width: 100%;
         max-width: 1200px;
          margin: 0 auto;
         margin-bottom: 100px;       
         & > span {
-            font-family: "DeutschGothic", Arial, Helvetica, sans-serif;
+            font-family: "Montserrat-Bold", Arial, Helvetica, sans-serif;
             font-size: 50px;
             font-weight: 700;
             line-height: 120%;
             color: $mainColor;
-        }
+        } 
     }
     &__grid {
         display: grid;

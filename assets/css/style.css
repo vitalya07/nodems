@@ -1,7 +1,22 @@
+@charset "UTF-8";
 @font-face {
   font-family: "DeutschGothic";
   src: url("../fonts/DeutschGothic");
   src: url("../fonts/DeutschGothic.eot") format("embedded-opentype"), url("../fonts/DeutschGothic.woff") format("woff"), url("../fonts/DeutschGothic.ttf") format("truetype");
+  font-style: "regular";
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Montserrat-Bold";
+  src: url("../fonts/montserat");
+  src: url("../fonts/montserat/Montserrat-Bold.eot") format("embedded-opentype"), url("../fonts/montserat/Montserrat-Bold.woff") format("woff"), url("../fonts/montserat/Montserrat-Bold.ttf") format("truetype");
+  font-style: "regular";
+  font-weight: 700;
+}
+@font-face {
+  font-family: "cuprum";
+  src: url("../fonts/cuprum");
+  src: url("../fonts/cuprum/Cuprum-Regular.eot") format("embedded-opentype"), url("../fonts/cuprum/Cuprum-Italic.woff") format("woff"), url("../fonts/cuprum/Cuprum-Regular.ttf") format("truetype");
   font-style: "regular";
   font-weight: 400;
 }
@@ -19,7 +34,7 @@ body {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "DeutschGothic", Arial, Helvetica, sans-serif;
+  font-family: "cuprum", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
 }
@@ -91,12 +106,96 @@ a {
 .light__style .header__nav-list > li > a {
   color: #1d1d1d;
 }
+.light__style .main__image {
+  border: 5px solid #1d1d1d;
+}
+
+.load-ready {
+  display: none;
+}
+
+.loader {
+  background-color: #f1fcfd;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.loader__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.loader__images {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.loader__images-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform-origin: -120px 0;
+          transform-origin: -120px 0;
+}
+
+/* Анимация вращения */
+@-webkit-keyframes orbit {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes orbit {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/* Солнце */
+.loader__sun {
+  -webkit-animation: orbit 4s linear infinite;
+          animation: orbit 4s linear infinite;
+}
+
+/* Луна — идёт следом, со сдвигом на 180° */
+.loader__moon {
+  -webkit-animation: orbit 4s linear infinite;
+          animation: orbit 4s linear infinite;
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s; /* половина времени — следом за солнцем */
+}
 
 .header {
   position: fixed;
   width: 100%;
   padding: 30px 0;
-  background-color: rgba(255, 255, 255, 0.3137254902);
+  background-color: #365eab;
 }
 .header__wrapper {
   display: -webkit-box;
@@ -156,11 +255,12 @@ a {
   width: 0;
   height: 2px;
   border-radius: 10px;
-  background-color: #2a4da6;
+  background-color: #999999;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
 .header__nav-list > li > a {
+  font-family: "cuprum", Arial, Helvetica, sans-serif;
   font-size: 30px;
   line-height: 120%;
   -webkit-transition: all 0.4s ease;
@@ -170,7 +270,7 @@ a {
   width: 100%;
 }
 .header__nav-list > li:hover > a {
-  color: #2a4da6;
+  color: #999999;
 }
 .header__change-item {
   cursor: pointer;
@@ -204,7 +304,8 @@ a {
   width: 100%;
   max-width: 200px;
   height: 60px;
-  background-color: #2a4da6;
+  background-color: #365eab;
+  border: 2px solid #1d1d1d;
   color: #f1fcfd;
   font-size: 20px;
   border-radius: 15px;
@@ -217,10 +318,15 @@ a {
 }
 
 .custom-logo {
-  width: 240px;
+  width: 140px;
+  height: 100px;
   text-decoration: none;
   color: #1d1d1d;
   font-size: 30px;
+}
+.custom-logo > img {
+  width: 100%;
+  height: 100%;
 }
 
 .hamburger {
@@ -237,7 +343,7 @@ a {
   left: 3%;
   width: 90%;
   height: 3px;
-  background-color: #2a4da6;
+  background-color: #365eab;
   border-radius: 30px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -306,27 +412,47 @@ a {
 }
 
 .main {
-  background: url("../img/desktop/main-bg.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   width: 100%;
   height: 100vh;
   padding: 400px 0 0 0;
 }
+.main__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.main__left {
+  width: 60%;
+}
 .main__title {
+  font-family: "Montserrat-Bold", Arial, Helvetica, sans-serif;
   font-size: 50px;
-  color: #f1fcfd;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto 60px auto;
 }
+.main__title > b {
+  font-family: "DeutschGothic", Arial, Helvetica, sans-serif;
+  font-size: 50px;
+}
 .main__descr {
+  font-family: "Montserrat-Bold", Arial, Helvetica, sans-serif;
   font-size: 30px;
-  color: #f1fcfd;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto 60px auto;
+}
+.main__image {
+  width: 40%;
+  height: 800px;
+  border: 5px solid #f1fcfd;
+  border-radius: 0 0 100% 100%;
 }
 
 .about {
@@ -350,14 +476,14 @@ a {
   width: 60%;
 }
 .about__title {
-  font-family: "DeutschGothic", Arial, Helvetica, sans-serif;
+  font-family: "Montserrat-Bold", Arial, Helvetica, sans-serif;
   font-weight: 700;
   font-size: 40px;
   line-height: 120%;
   margin-bottom: 30px;
 }
 .about__descr {
-  font-family: "DeutschGothic", Arial, Helvetica, sans-serif;
+  font-family: "cuprum", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 30px;
   line-height: 120%;
@@ -383,7 +509,7 @@ a {
   width: 100%;
   max-width: 200px;
   height: 60px;
-  background-color: #2a4da6;
+  background-color: #365eab;
   color: #f1fcfd;
   font-size: 20px;
   border-radius: 15px;
@@ -399,7 +525,7 @@ a {
   padding: 100px 0;
 }
 .care__title {
-  font-family: "DeutschGothic", Arial, Helvetica, sans-serif;
+  font-family: "Montserrat-Bold", Arial, Helvetica, sans-serif;
   font-size: 50px;
   font-weight: 700;
   line-height: 120%;
@@ -409,11 +535,11 @@ a {
   margin-bottom: 100px;
 }
 .care__title > span {
-  font-family: "DeutschGothic", Arial, Helvetica, sans-serif;
+  font-family: "Montserrat-Bold", Arial, Helvetica, sans-serif;
   font-size: 50px;
   font-weight: 700;
   line-height: 120%;
-  color: #2a4da6;
+  color: #365eab;
 }
 .care__grid {
   display: grid;
@@ -453,7 +579,7 @@ a {
   width: 100%;
 }
 .team__title {
-  font-family: "DeutschGothic", Arial, Helvetica, sans-serif;
+  font-family: "Montserrat-Bold", Arial, Helvetica, sans-serif;
   font-weight: 700;
   font-size: 50px;
   line-height: 120%;
@@ -463,7 +589,7 @@ a {
   margin-bottom: 80px;
 }
 .team__pr {
-  font-family: "DeutschGothic", Arial, Helvetica, sans-serif;
+  font-family: "cuprum", Arial, Helvetica, sans-serif;
   font-weight: 300;
   font-size: 30px;
   line-height: 120%;
@@ -522,7 +648,7 @@ a {
   font-family: "DeutschGothic", Arial, Helvetica, sans-serif;
   font-size: 20px;
   line-height: 120%;
-  color: #2a4da6;
+  color: #365eab;
   text-align: center;
 }
 .modal__close {
@@ -543,7 +669,7 @@ a {
           transform: translate(-50%, -50%) rotate(45deg);
   width: 80%;
   height: 3px;
-  background-color: #2a4da6;
+  background-color: #365eab;
 }
 .modal__close::before {
   content: "";
@@ -554,7 +680,7 @@ a {
           transform: translate(-50%, -50%) rotate(-45deg);
   width: 80%;
   height: 3px;
-  background-color: #2a4da6;
+  background-color: #365eab;
 }
 .modal__label {
   width: 100%;
@@ -564,11 +690,11 @@ a {
   padding: 15px 20px;
   margin-bottom: 30px;
   background-color: #f1fcfd;
-  border-bottom: 2px solid #2a4da6;
+  border-bottom: 2px solid #365eab;
   font-family: "DeutschGothic", Arial, Helvetica, sans-serif;
   font-size: 20px;
   line-height: 120%;
-  color: #2a4da6;
+  color: #365eab;
 }
 .modal__input:last-child {
   margin-bottom: 80px;
@@ -579,11 +705,11 @@ a {
   padding: 15px 20px;
   margin-bottom: 30px;
   background-color: #f1fcfd;
-  border-bottom: 2px solid #2a4da6;
+  border-bottom: 2px solid #365eab;
   font-family: "DeutschGothic", Arial, Helvetica, sans-serif;
   font-size: 20px;
   line-height: 120%;
-  color: #2a4da6;
+  color: #365eab;
 }
 .modal__warning {
   display: -webkit-box;
@@ -607,7 +733,7 @@ a {
   display: block;
   font-size: 12px;
   line-height: 120%;
-  color: #2a4da6;
+  color: #365eab;
 }
 .modal__active {
   visibility: visible;
@@ -627,7 +753,7 @@ a {
 .footer {
   padding: 100px 0;
   width: 100%;
-  background-color: #2a4da6;
+  background-color: #365eab;
 }
 .footer__wrapper {
   display: -webkit-box;
@@ -641,7 +767,7 @@ a {
           justify-content: space-between;
 }
 .footer__policy {
-  font-family: "DeutschGothic", Arial, Helvetica, sans-serif;
+  font-family: "cuprum", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 120%;
@@ -649,7 +775,7 @@ a {
   color: #f1fcfd;
 }
 .footer__copy {
-  font-family: "DeutschGothic", Arial, Helvetica, sans-serif;
+  font-family: "cuprum", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 120%;

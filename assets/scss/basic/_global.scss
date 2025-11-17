@@ -28,4 +28,10 @@
             }
         }
     }
+    .main__image {
+        border: 5px solid $textBlackColor;
+    }
+}
+.load-ready {
+   display: none;
 }

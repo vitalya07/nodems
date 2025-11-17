@@ -36,43 +36,25 @@ document.addEventListener('DOMContentLoaded', ()=> {
     hamburger.addEventListener('click', ()=> {
         header.classList.toggle('menu__active');
     });
-    //гамбургер конец
-    //Смена темы начало
-    // const changeThemeBtn = document.querySelector('.header__change-color');
-    // const btnDark = document.querySelector('.header__change-colors--dark');
-    // const btnLight = document.querySelector('.header__change-colors--light');
-
-    // function enabledDark() {
-    //     document.body.classList.remove('light__style');
-    //     document.body.classList.add('dark__style');        
-    //     btnLight.style.display = 'none';
-    //     btnDark.style.display = 'flex';
-    //     let text = changeThemeBtn.querySelector('span');
-    //     text.textContent = `Light`;
-    //     let img = changeThemeBtn.querySelector('img');
-    //     img.src = '../assets/icons/sun.svg'; // правильное присваивание
-    // }
-
-    // function disableDark() {
-    //     document.body.classList.remove('dark__style');
-    //     document.body.classList.add('light__style');      
-    //     btnDark.style.display = 'none';
-    //     btnLight.style.display = 'flex';
-    //     let img = changeThemeBtn.querySelector('img');
-    //     img.src = '../assets/icons/moon.svg'; // если нужно вернуть изображение
-    // }
-
-    // changeThemeBtn.addEventListener('click', () => {
-    //     if (document.body.classList.contains('light__style')) {
-    //         enabledDark();
-    //     } else {
-    //         disableDark();
-    //     }
-    // });
 
     const changeThemeBtn = document.querySelector('.header__change-color');
     const btnDark = document.querySelector('.header__change-colors--dark');
     const btnLight = document.querySelector('.header__change-colors--light');
+
+    // Функция для сохранения темы
+    function saveTheme(theme) {
+        localStorage.setItem('theme', theme);
+    }
+
+    // Функция для загрузки темы из localStorage
+    function loadTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            enabledDark();
+        } else {
+            disableDark();
+        }
+    }
 
     function enabledDark() {
         document.body.classList.remove('light__style');
@@ -82,7 +64,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
         let text = changeThemeBtn.querySelector('span');
         text.textContent = `Light`;
         let img = changeThemeBtn.querySelector('img');
-        img.src = '../assets/icons/sun.svg';
+        img.src = 'assets/icons/sun.svg';
+        saveTheme('dark');
     }
 
     function disableDark() {
@@ -92,14 +75,27 @@ document.addEventListener('DOMContentLoaded', ()=> {
         text.textContent = `Dark`;
         btnLight.style.display = 'flex';
         let img = changeThemeBtn.querySelector('img');
-        img.src = '../assets/icons/moon.svg';
+        img.src = 'assets/icons/moon.svg';
+        saveTheme('light');
     }
 
-    changeThemeBtn.addEventListener('click', () => {
+    // Загружаем тему при загрузке страницы
+    window.addEventListener('DOMContentLoaded', loadTheme);
+
+        changeThemeBtn.addEventListener('click', () => {
         if (document.body.classList.contains('light__style')) {
             enabledDark();
         } else {
             disableDark();
         }
     });
+
+    //Лоадер
+    let loader = document.querySelector('.loader');
+    window.addEventListener('load', ()=> {
+        setTimeout(()=> {
+            loader.classList.add('load-ready')
+        }, 2000)
+       
+    })
 })
