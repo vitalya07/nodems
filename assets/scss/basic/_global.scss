@@ -31,6 +31,18 @@
     .main__image {
         border: 5px solid $textBlackColor;
     }
+    .services__item {       
+       background-color: $textGrayColor;
+        &-img {
+            & > span {
+                background-color: $textBlackColor;
+            }
+        }
+    }
+    .services__btn {
+        color: $textBlackColor;
+        border: 2px solid $textBlackColor;
+    }
 }
 .load-ready {
    display: none;

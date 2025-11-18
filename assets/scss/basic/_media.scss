@@ -25,6 +25,11 @@
             }
         }
     }
+    .main {
+        &__image {
+            height: 500px;
+        }
+    }
 }
 @media (max-width:1480px) {
     .custom-logo {
@@ -50,6 +55,7 @@
             height: 40px;
         }
     }
+    
     .footer {
         &__policy {
             font-size: 16px;
@@ -170,6 +176,20 @@
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         }
     }
+    .main {
+        &__wrapper {
+            flex-direction: column;
+        }
+        &__image {
+            width: 50%;
+            height: 400px;
+            order: 1;
+            margin: 0 auto 50px auto;
+        }
+        &__left {
+            order: 2;
+        }
+    }
     .team {
         &__title {
             font-size: 40px;
@@ -179,8 +199,24 @@
             margin-left: 0;
         }
     }
+    .teams {
+        &__wrapper {
+            display: none;
+        }
+        &__mobile {
+            display: block;
+        }
+    }
 }
 @media (max-width:993px) {
+    // .teams {
+    //     &__mobile {
+    //         &-img {
+    //             width: 200px;
+    //             height: 200px;
+    //         }
+    //     }
+    // }
     .footer {
         &__wrapper {
             flex-direction: column;
@@ -195,18 +231,20 @@
     }
 }
 @media (max-width:768px) {
-    .main {
-        padding: 150px 0 0 0;
-        &__title {
-            font-size: 40px;
-        }
-    }
     .about {
         &__title {
             font-size: 30px;
         }
         &__descr {
             font-size: 20px;
+        }
+    }
+    .teams {
+        &__mobile {
+            &-img {
+                width: 80%;
+                height: auto;
+            }
         }
     }
     .care {
@@ -250,8 +288,6 @@
         padding: 10px 0;
     }
     .main {
-        max-height: 450px;
-        padding: 150px 0 0 0;
         &__title {
             font-size: 30px;
             max-width: 380px;
@@ -277,8 +313,6 @@
         padding: 0 15px;
     }
     .main {
-        background-image: url('../img/mobile/main-bg-mobile.webp');
-        padding: 100px 0 0 0 ;
         &__title {
             font-size: 26px;
             margin-bottom: 20px;
