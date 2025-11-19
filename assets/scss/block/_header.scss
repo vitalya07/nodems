@@ -76,9 +76,12 @@
         }
         &-colors {
             cursor: pointer;
-            &--light {
-                display: none;
-            }
+            // // &--light {
+            // //     display: none;
+            // // }
+            // &--mobile {
+            //     display: block;
+            // }
         }
        
     }

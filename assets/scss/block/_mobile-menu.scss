@@ -13,15 +13,16 @@
         & > li {
             margin-bottom: 30px;
             & > a {
-                font-family: 'DeutschGothic', Arial, Helvetica, sans-serif;
+                font-family: 'cuprum', Arial, Helvetica, sans-serif;
                 font-weight: 400;
                 font-size: 30px;
                 line-height: 120%;
-                color: $textBlackColor;
+                color: $textWhiteColor;
             }
         }
     }
     &-btn {
+        border: none;
         margin-bottom: 30px;
     }
 }

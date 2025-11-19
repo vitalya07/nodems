@@ -28,6 +28,15 @@
             }
         }
     }
+    .mobile__menu {
+        &-list {
+            & > li {
+                & > a {
+                    color:$textBlackColor;
+                }
+            }
+        }
+    }
     .main__image {
         border: 5px solid $textBlackColor;
     }

@@ -9,7 +9,7 @@ new Swiper('.swiper__teams', {
     // до 992px включительно
     0: {
       slidesPerView: 1,
-      spaceBetween: -50,   // БОЛЬШИЙ отступ между 2 слайдами
+      spaceBetween: -30,   // БОЛЬШИЙ отступ между 2 слайдами
     },
     765: {
       slidesPerView: 2,

@@ -36,66 +36,78 @@ document.addEventListener('DOMContentLoaded', ()=> {
     hamburger.addEventListener('click', ()=> {
         header.classList.toggle('menu__active');
     });
+    //Гамбуоргер конец
+    //Лоадер начало
+    let loader = document.querySelector('.loader');
+    window.addEventListener('load', ()=> {
+        setTimeout(()=> {
+            loader.classList.add('load-ready')
+        }, 1500)
+       
+    });
+    //Лоадер конец 
+    
+    // смена цвета темы начало
+    const desktopThemeBtn = document.querySelector('.header__right .header__change-color');
+    const mobileThemeBtn = document.querySelector('.header__change-colors--mobile .header__change-color');
 
-    const changeThemeBtn = document.querySelector('.header__change-color');
-    const btnDark = document.querySelector('.header__change-colors--dark');
-    const btnLight = document.querySelector('.header__change-colors--light');
 
-    // Функция для сохранения темы
     function saveTheme(theme) {
         localStorage.setItem('theme', theme);
     }
 
-    // Функция для загрузки темы из localStorage
     function loadTheme() {
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
-            enabledDark();
+            enableDark();
         } else {
             disableDark();
         }
     }
 
-    function enabledDark() {
+    function enableDark() {
         document.body.classList.remove('light__style');
-        document.body.classList.add('dark__style');        
-        btnLight.style.display = 'none';
-        btnDark.style.display = 'flex';
-        let text = changeThemeBtn.querySelector('span');
-        text.textContent = `Light`;
-        let img = changeThemeBtn.querySelector('img');
-        img.src = 'assets/icons/sun.svg';
+        document.body.classList.add('dark__style');
+
+        updateBtn(desktopThemeBtn, 'Light', 'assets/icons/sun.svg');
+        updateBtn(mobileThemeBtn, 'Light', 'assets/icons/sun.svg');
+
         saveTheme('dark');
     }
 
     function disableDark() {
         document.body.classList.remove('dark__style');
-        document.body.classList.add('light__style');      
-        let text = changeThemeBtn.querySelector('span');
-        text.textContent = `Dark`;
-        btnLight.style.display = 'flex';
-        let img = changeThemeBtn.querySelector('img');
-        img.src = 'assets/icons/moon.svg';
+        document.body.classList.add('light__style');
+
+        updateBtn(desktopThemeBtn, 'Dark', 'assets/icons/moon.svg');
+        updateBtn(mobileThemeBtn, 'Dark', 'assets/icons/moon.svg');
+
         saveTheme('light');
     }
+    function updateBtn(btn, textValue, iconSrc) {
+        if (!btn) return;
 
-    // Загружаем тему при загрузке страницы
+        const text = btn.querySelector('span');
+        const img = btn.querySelector('img');
+
+        if (text) text.textContent = textValue;
+        if (img) img.src = iconSrc;
+    }
+
     window.addEventListener('DOMContentLoaded', loadTheme);
 
-        changeThemeBtn.addEventListener('click', () => {
-        if (document.body.classList.contains('light__style')) {
-            enabledDark();
-        } else {
-            disableDark();
-        }
-    });
+    if (desktopThemeBtn) {
+        desktopThemeBtn.addEventListener('click', () => {
+            if (document.body.classList.contains('light__style')) enableDark();
+            else disableDark();
+        });
+    }
 
-    //Лоадер
-    let loader = document.querySelector('.loader');
-    window.addEventListener('load', ()=> {
-        setTimeout(()=> {
-            loader.classList.add('load-ready')
-        }, 2000)
-       
-    })
+    if (mobileThemeBtn) {
+        mobileThemeBtn.addEventListener('click', () => {
+            if (document.body.classList.contains('light__style')) enableDark();
+            else disableDark();
+        });
+    };
+    //Смена цвета темы конец
 })
