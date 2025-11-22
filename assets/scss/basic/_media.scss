@@ -210,14 +210,6 @@
             margin-left: 0;
         }
     }
-    .teams {
-        &__wrapper {
-            display: none;
-        }
-        &__mobile {
-            display: block;
-        }
-    }
 }
 @media (max-width:993px) {
     .footer {
@@ -362,13 +354,6 @@
         &__descr {
             font-size: 16px;
             margin-bottom: 0;
-        }
-    }
-    .teams {
-        &__mobile {
-            &-descr {
-                max-width: 250px;
-            }
         }
     }
     .about {

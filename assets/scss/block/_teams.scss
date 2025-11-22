@@ -9,13 +9,9 @@
         text-align: center;
     }
     &__wrapper {
-        display: flex;
-        align-items: start;
-        justify-content: start;
-        gap: 15px;
-    }
-    &__item {
-        width: 25%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(650px, 1fr));
+        gap: 10px;
     }
     &__img {
         width: 100%;

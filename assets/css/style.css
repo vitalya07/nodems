@@ -460,11 +460,94 @@ a {
   max-width: 1200px;
   margin: 0 auto 60px auto;
 }
-.main__image {
-  width: 40%;
-  height: 800px;
-  border: 5px solid #f1fcfd;
-  border-radius: 0 0 100% 100%;
+.main__images {
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+.main__images-img {
+  width: 90px;
+  height: 90px;
+}
+.main__images-img > img {
+  width: 100%;
+  height: 100%;
+}
+.main__images-img--house {
+  width: 200px;
+  height: 200px;
+}
+.main__images-img--house > img {
+  width: 100%;
+  height: 100%;
+}
+
+.orbit-wrapper {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  margin: 0 auto;
+}
+
+/* Дом в центре */
+.center-house {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+/* Общая орбита */
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  -webkit-transform-origin: 0 -180px;
+          transform-origin: 0 -180px; /* радиус вращения */
+  -webkit-animation: spin 12s linear infinite;
+          animation: spin 12s linear infinite;
+}
+
+/* Луна начинает сверху */
+.orbit--moon {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s; /* 0° */
+}
+
+/* Солнце начинает снизу (180°) */
+.orbit--sun {
+  -webkit-animation-delay: -6s;
+          animation-delay: -6s; /* половина периода: 12s / 2 */
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/* Центрируем картинки в точке орбиты */
+.orbit img {
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .teams {
@@ -479,19 +562,9 @@ a {
   text-align: center;
 }
 .teams__wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-  gap: 15px;
-}
-.teams__item {
-  width: 25%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(650px, 1fr));
+  gap: 10px;
 }
 .teams__img {
   width: 100%;
@@ -702,6 +775,93 @@ a {
   max-width: 1200px;
   margin-left: 40px;
 }
+.team__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.team__left {
+  width: 49%;
+}
+.team__feedback {
+  width: 40%;
+}
+.team__feedback-form {
+  width: 100%;
+}
+.team__feedback-label {
+  width: 100%;
+}
+.team__feedback-input {
+  width: 100%;
+  height: 40px;
+  max-width: 400px;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+}
+.team__feedback-textarea {
+  max-width: 400px;
+  width: 100%;
+  height: 80px;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+}
+.team__feedback-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  height: 50px;
+  background-color: #365eab;
+  margin-bottom: 30px;
+  font-family: "Montserrat-Bold";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #f1fcfd;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.team__feedback-btn:hover {
+  background-color: rgba(54, 94, 171, 0.5647058824);
+}
+.team__feedback-warning {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  gap: 5px;
+}
+.team__feedback-warning--text {
+  font-family: "cuprum", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.team__feedback-warning--text > a {
+  display: block;
+  font-family: "cuprum", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #365eab;
+}
 
 .modal {
   width: 100%;
@@ -739,7 +899,7 @@ a {
   width: 90%;
 }
 .modal__head-title {
-  font-family: "DeutschGothic", Arial, Helvetica, sans-serif;
+  font-family: "Montserrat-Bold", Arial, Helvetica, sans-serif;
   font-size: 30px;
   line-height: 120%;
   color: #1d1d1d;
@@ -747,11 +907,12 @@ a {
   margin-bottom: 30px;
 }
 .modal__head-subtitle {
-  font-family: "DeutschGothic", Arial, Helvetica, sans-serif;
+  font-family: "Montserrat-Bold", Arial, Helvetica, sans-serif;
   font-size: 20px;
   line-height: 120%;
   color: #365eab;
   text-align: center;
+  margin-bottom: 40px;
 }
 .modal__close {
   width: 50px;
@@ -793,10 +954,11 @@ a {
   margin-bottom: 30px;
   background-color: #f1fcfd;
   border-bottom: 2px solid #365eab;
-  font-family: "DeutschGothic", Arial, Helvetica, sans-serif;
+  font-family: "cuprum", Arial, Helvetica, sans-serif;
   font-size: 20px;
   line-height: 120%;
   color: #365eab;
+  font-weight: 400;
 }
 .modal__input:last-child {
   margin-bottom: 80px;
@@ -808,7 +970,8 @@ a {
   margin-bottom: 30px;
   background-color: #f1fcfd;
   border-bottom: 2px solid #365eab;
-  font-family: "DeutschGothic", Arial, Helvetica, sans-serif;
+  font-family: "cuprum", Arial, Helvetica, sans-serif;
+  font-weight: 400;
   font-size: 20px;
   line-height: 120%;
   color: #365eab;
@@ -832,7 +995,6 @@ a {
   color: #1d1d1d;
 }
 .modal__information > a {
-  display: block;
   font-size: 12px;
   line-height: 120%;
   color: #365eab;
@@ -850,6 +1012,31 @@ a {
 .modal__hidden .modal__dialog {
   -webkit-transform: scale(0);
           transform: scale(0);
+}
+.modal__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 50px;
+  background-color: #365eab;
+  margin-bottom: 30px;
+  font-family: "Montserrat-Bold";
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #f1fcfd;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.modal__btn:hover {
+  background-color: rgba(54, 94, 171, 0.5647058824);
 }
 
 .services {
@@ -890,28 +1077,9 @@ a {
   background-color: #212121;
 }
 .services__item-img {
-  width: 40px;
-  height: 45px;
+  width: 120px;
+  height: auto;
   position: relative;
-  margin-bottom: 30px;
-}
-.services__item-img > span {
-  display: block;
-  background-color: #f1fcfd;
-  width: 16px;
-  height: 16px;
-  border-radius: 100%;
-  position: absolute;
-}
-.services__item-img > span:first-child {
-  top: 0;
-}
-.services__item-img > span:nth-child(2) {
-  top: 13px;
-  left: 20px;
-}
-.services__item-img > span:last-child {
-  top: 25px;
 }
 .services__item-title {
   font-family: "Montserrat-Bold", Arial, Helvetica, sans-serif;
@@ -1177,12 +1345,6 @@ a {
     font-size: 20px;
     margin-left: 0;
   }
-  .teams__wrapper {
-    display: none;
-  }
-  .teams__mobile {
-    display: block;
-  }
 }
 @media (max-width: 993px) {
   .footer__wrapper {
@@ -1312,9 +1474,6 @@ a {
   .main__descr {
     font-size: 16px;
     margin-bottom: 0;
-  }
-  .teams__mobile-descr {
-    max-width: 250px;
   }
   .about__title {
     font-size: 20px;
