@@ -48,66 +48,146 @@ document.addEventListener('DOMContentLoaded', ()=> {
     //Лоадер конец 
     
     // смена цвета темы начало
-    const desktopThemeBtn = document.querySelector('.header__right .header__change-color');
-    const mobileThemeBtn = document.querySelector('.header__change-colors--mobile .header__change-color');
+    // const desktopThemeBtn = document.querySelector('.header__right .header__change-color');
+    // const mobileThemeBtn = document.querySelector('.header__change-colors--mobile .header__change-color');
 
 
-    function saveTheme(theme) {
-        localStorage.setItem('theme', theme);
-    }
+    // function saveTheme(theme) {
+    //     localStorage.setItem('theme', theme);
+    // }
 
-    function loadTheme() {
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            enableDark();
-        } else {
-            disableDark();
-        }
-    }
+    // function loadTheme() {
+    //     const savedTheme = localStorage.getItem('theme');
+    //     if (savedTheme === 'dark') {
+    //         enableDark();
+    //     } else {
+    //         disableDark();
+    //     }
+    // }
 
-    function enableDark() {
-        document.body.classList.remove('light__style');
-        document.body.classList.add('dark__style');
+    // function enableDark() {
+    //     document.body.classList.remove('light__style');
+    //     document.body.classList.add('dark__style');
 
-        updateBtn(desktopThemeBtn, 'Light', 'assets/icons/sun.svg');
-        updateBtn(mobileThemeBtn, 'Light', 'assets/icons/sun.svg');
+    //     updateBtn(desktopThemeBtn, 'Light', 'assets/icons/sun.svg');
+    //     updateBtn(mobileThemeBtn, 'Light', 'assets/icons/sun.svg');
 
-        saveTheme('dark');
-    }
+    //     saveTheme('dark');
+    // }
 
-    function disableDark() {
-        document.body.classList.remove('dark__style');
-        document.body.classList.add('light__style');
+    // function disableDark() {
+    //     document.body.classList.remove('dark__style');
+    //     document.body.classList.add('light__style');
 
-        updateBtn(desktopThemeBtn, 'Dark', 'assets/icons/moon.svg');
-        updateBtn(mobileThemeBtn, 'Dark', 'assets/icons/moon.svg');
+    //     updateBtn(desktopThemeBtn, 'Dark', 'assets/icons/moon.svg');
+    //     updateBtn(mobileThemeBtn, 'Dark', 'assets/icons/moon.svg');
 
-        saveTheme('light');
-    }
-    function updateBtn(btn, textValue, iconSrc) {
-        if (!btn) return;
+    //     saveTheme('light');
+    // }
+    // function updateBtn(btn, textValue, iconSrc) {
+    //     if (!btn) return;
 
-        const text = btn.querySelector('span');
-        const img = btn.querySelector('img');
+    //     const text = btn.querySelector('span');
+    //     const img = btn.querySelector('img');
 
-        if (text) text.textContent = textValue;
-        if (img) img.src = iconSrc;
-    }
+    //     if (text) text.textContent = textValue;
+    //     if (img) img.src = iconSrc;
+    // }
 
-    window.addEventListener('DOMContentLoaded', loadTheme);
+    // window.addEventListener('DOMContentLoaded', loadTheme);
 
-    if (desktopThemeBtn) {
-        desktopThemeBtn.addEventListener('click', () => {
-            if (document.body.classList.contains('light__style')) enableDark();
-            else disableDark();
-        });
-    }
+    // if (desktopThemeBtn) {
+    //     desktopThemeBtn.addEventListener('click', () => {
+    //         if (document.body.classList.contains('light__style')) enableDark();
+    //         else disableDark();
+    //     });
+    // }
 
-    if (mobileThemeBtn) {
-        mobileThemeBtn.addEventListener('click', () => {
-            if (document.body.classList.contains('light__style')) enableDark();
-            else disableDark();
-        });
-    };
+    // if (mobileThemeBtn) {
+    //     mobileThemeBtn.addEventListener('click', () => {
+    //         if (document.body.classList.contains('light__style')) enableDark();
+    //         else disableDark();
+    //     });
+    // };
     //Смена цвета темы конец
+    // смена цвета темы начало
+const desktopThemeBtn = document.querySelector('.header__right .header__change-color');
+const mobileThemeBtn = document.querySelector('.header__change-colors--mobile .header__change-color');
+
+// Функция смены картинок
+function updateThemeImages(theme) {
+    const images = document.querySelectorAll('.theme-img');
+    images.forEach(img => {
+        const newSrc = img.dataset[theme];
+        if (newSrc) img.src = newSrc;
+    });
+}
+
+// Сохранение темы
+function saveTheme(theme) {
+    localStorage.setItem('theme', theme);
+}
+
+// Загрузка темы
+function loadTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        enableDark();
+    } else {
+        disableDark();
+    }
+}
+
+function enableDark() {
+    document.body.classList.remove('light__style');
+    document.body.classList.add('dark__style');
+
+    updateBtn(desktopThemeBtn, 'Light', 'assets/icons/sun.svg');
+    updateBtn(mobileThemeBtn, 'Light', 'assets/icons/sun.svg');
+
+    updateThemeImages('dark');   // <<<<< ДОБАВЛЕНО
+
+    saveTheme('dark');
+}
+
+function disableDark() {
+    document.body.classList.remove('dark__style');
+    document.body.classList.add('light__style');
+
+    updateBtn(desktopThemeBtn, 'Dark', 'assets/icons/moon.svg');
+    updateBtn(mobileThemeBtn, 'Dark', 'assets/icons/moon.svg');
+
+    updateThemeImages('light');  // <<<<< ДОБАВЛЕНО
+
+    saveTheme('light');
+}
+
+function updateBtn(btn, textValue, iconSrc) {
+    if (!btn) return;
+
+    const text = btn.querySelector('span');
+    const img = btn.querySelector('img');
+
+    if (text) text.textContent = textValue;
+    if (img) img.src = iconSrc;
+}
+
+window.addEventListener('DOMContentLoaded', loadTheme);
+
+if (desktopThemeBtn) {
+    desktopThemeBtn.addEventListener('click', () => {
+        if (document.body.classList.contains('light__style')) enableDark();
+        else disableDark();
+    });
+}
+
+if (mobileThemeBtn) {
+    mobileThemeBtn.addEventListener('click', () => {
+        if (document.body.classList.contains('light__style')) enableDark();
+        else disableDark();
+    });
+};
+// смена цвета темы конец
+
+
 })

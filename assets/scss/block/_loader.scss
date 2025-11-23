@@ -1,5 +1,6 @@
 .loader {
-    background-color: $textWhiteColor;
+    // background-color: $textWhiteColor;
+    background-color: $textBlackColor;
     width: 100%;
     height: 100%;
     position: fixed;
@@ -7,44 +8,31 @@
     left: 0;
     z-index: 100;
     &__wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        width: 100%;
-        height: 100%;
+        margin: 200px auto !important
     }
-    &__images {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100px;
-        height: 100px;
-        margin: 0 auto;
-    }
+    
 }
 
-.loader__images-img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform-origin: -120px 0; 
-}
+// .loader__images-img {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform-origin: -120px 0; 
+// }
 
 /* Анимация вращения */
-@keyframes orbit {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
-}
+// @keyframes orbit {
+//     from { transform: rotate(0deg); }
+//     to   { transform: rotate(360deg); }
+// }
 
-/* Солнце */
-.loader__sun {
-    animation: orbit 4s linear infinite;
-}
+// /* Солнце */
+// .loader__sun {
+//     animation: orbit 4s linear infinite;
+// }
 
-/* Луна — идёт следом, со сдвигом на 180° */
-.loader__moon {
-    animation: orbit 4s linear infinite;
-    animation-delay: -2s; /* половина времени — следом за солнцем */
-}
+// /* Луна — идёт следом, со сдвигом на 180° */
+// .loader__moon {
+//     animation: orbit 4s linear infinite;
+//     animation-delay: -2s; /* половина времени — следом за солнцем */
+// }

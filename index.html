@@ -10,15 +10,25 @@
 </head>
 <body class="light__style">
     <div class="loader">
-        <div class="loader__wrapper">
-            <div class="loader__house"></div>
-            <div class="loader__images">
-                <div class="loader__images-img loader__sun">
-                    <img src="assets/icons/sun-dark.svg" alt="солнце" width="60" height="60" loading="lazy" class="loader__sun">
-                </div> 
-                <div class="loader__images-img loader__moon">
-                    <img src="assets/icons/moon.svg" alt="луна" width="60" height="60" loading="lazy">
-                </div>   
+        <div class="orbit-wrapper loader__wrapper">
+            <img class="center theme-img"
+                data-light="assets/icons/light-theme/home.svg"
+                data-dark="assets/icons/dark-theme/light-house.svg"
+                src="assets/icons/light-theme/home.svg"
+                width="200" height="200">
+
+            <div class="orbit">
+                <img class="sun  theme-img sun-img"
+                    data-light="assets/icons/light-theme/sun-2.svg"
+                    data-dark="assets/icons/dark-theme/light-sun.svg"
+                    src="assets/icons/light-theme/sun-2.svg"
+                    width="120" height="120" loading="lazy">
+
+                <img class="moon theme-img moon-img"
+                    data-light="assets/icons/light-theme/moon-2.svg"
+                    data-dark="assets/icons/dark-theme/light-moon.svg"
+                    src="assets/icons/light-theme/moon-2.svg"
+                    width="120" height="120">
             </div>
         </div>
     </div>
@@ -89,24 +99,31 @@
             <section class="main" id="main">
                 <div class="container">
                     <div class="main__wrapper">
+                        <div class="orbit-wrapper">
+                            <img class="center theme-img"
+                                data-light="assets/icons/light-theme/home.svg"
+                                data-dark="assets/icons/dark-theme/light-house.svg"
+                                src="assets/icons/light-theme/home.svg"
+                                width="200" height="200">
+
+                            <div class="orbit">
+                                <img class="sun theme-img sun-img"
+                                    data-light="assets/icons/light-theme/sun-2.svg"
+                                    data-dark="assets/icons/dark-theme/light-sun.svg"
+                                    src="assets/icons/light-theme/sun-2.svg"
+                                    width="120" height="120" loading="lazy">
+
+                                <img class="moon theme-img moon-img"
+                                    data-light="assets/icons/light-theme/moon-2.svg"
+                                    data-dark="assets/icons/dark-theme/light-moon.svg"
+                                    src="assets/icons/light-theme/moon-2.svg"
+                                    width="120" height="120">
+                            </div>
+                        </div>
                         <div class="main__left">
                             <h1 class="main__title">Центр поддержки соотечественников <b>“НОДЕМС”</b> </h1>
                             <h2 class="main__descr">С вами на пути к новой жизни</h2>
-                        </div>
-                       <div class="orbit-wrapper">
-                            <div class="center-house">
-                                <img src="assets/icons/home.svg" alt="house" width="200" height="200">
-                            </div>
-
-                            <div class="orbit orbit--moon">
-                                <img src="assets/icons/moon-2.svg" alt="moon" width="120" height="120">
-                            </div>
-
-                            <div class="orbit orbit--sun">
-                                <img src="assets/icons/sun-2.svg" alt="sun" width="120" height="120">
-                            </div>
-                        </div>
-
+                        </div>                      
                     </div>                    
                 </div>               
             </section>

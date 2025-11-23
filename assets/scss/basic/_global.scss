@@ -21,6 +21,10 @@
 .light__style {
     background-color:  $textWhiteColor;
     color:$textBlackColor;
+    .loader  {
+        background-color: $textWhiteColor;
+        // background-color: $textBlackColor;
+    }
     .header__nav-list {
         & > li {
             & > a {
@@ -37,8 +41,9 @@
             }
         }
     }
-    .main__image {
-        border: 5px solid $textBlackColor;
+    .header__btn {
+        border: 2px solid $textBlackColor;
+        color: $textBlackColor;
     }
     .services__item {       
        background-color: $textGrayColor;
