@@ -25,7 +25,7 @@ html, body {
   padding: 0;
 }
 
-body {
+html {
   scroll-behavior: smooth;
 }
 
@@ -131,6 +131,30 @@ a {
   display: none;
 }
 
+.arrow__top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #365eab;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.arrow__top:hover {
+  background-color: #4f64b3;
+}
+
 .loader {
   background-color: #1d1d1d;
   width: 100%;
@@ -148,7 +172,7 @@ a {
 .header {
   position: fixed;
   width: 100%;
-  padding: 30px 0;
+  padding: 10px 0;
   background-color: #365eab;
   z-index: 10;
 }
@@ -1083,6 +1107,30 @@ a {
   color: #365eab;
 }
 
+.social {
+  width: 100%;
+  max-width: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+}
+.social__link {
+  display: block;
+  width: 35px;
+  height: 35px;
+}
+.social__link > img {
+  width: 100%;
+  height: 100%;
+}
+
 .footer {
   padding: 100px 0;
   width: 100%;
@@ -1120,6 +1168,27 @@ a {
   .custom-logo {
     width: 150px;
     font-size: 20px;
+  }
+  .header__left {
+    gap: 10px;
+  }
+  .header__nav-list {
+    gap: 10px;
+  }
+  .header__nav-list > li > a {
+    font-size: 22px;
+  }
+  .header__change-item {
+    font-size: 22px;
+  }
+  .header__change-color {
+    gap: 0;
+  }
+  .header__change-color > span {
+    font-size: 22px;
+  }
+  .header__right {
+    gap: 10px;
   }
   .header__btn {
     max-width: 200px;
@@ -1160,26 +1229,15 @@ a {
   }
 }
 @media (max-width: 1280px) {
-  .header__left {
-    gap: 10px;
-  }
-  .header__nav-list {
-    gap: 10px;
-  }
-  .header__nav-list > li > a {
-    font-size: 25px;
-  }
-  .header__change-item {
-    font-size: 25px;
-  }
-  .header__change-color {
-    font-size: 25px;
-  }
-  .header__right {
-    gap: 10px;
+  .custom-logo {
+    width: 100px;
   }
   .header__btn {
     height: 50px;
+  }
+  .social__link {
+    width: 26px;
+    height: 26px;
   }
   .main__wrapper {
     -webkit-box-orient: vertical;
@@ -1502,5 +1560,8 @@ a {
   }
   .footer__copy {
     font-size: 16px;
+  }
+  .arrow__top {
+    display: none;
   }
 }/*# sourceMappingURL=style.css.map */

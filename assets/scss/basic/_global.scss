@@ -61,3 +61,19 @@
 .load-ready {
    display: none;
 }
+.arrow__top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: $mainColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .4s ease;
+    &:hover {
+        background-color: $mainColorHover;
+    }
+}
